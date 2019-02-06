@@ -1,17 +1,19 @@
 language: php
 
+cache:
+  directories:
+    - vendor
+
 matrix:
   include:
     - php: 7.1
       env:
         - COMPOSER_FLAGS='--prefer-lowest'
-    - php: 7.2
-
-sudo: false
+    - php: 7.3
 
 before_script:
   - phpenv config-rm xdebug.ini
   - composer validate
   - composer update $COMPOSER_FLAGS
 
-script: bin/phpunit
+script: vendor/bin/phpunit
