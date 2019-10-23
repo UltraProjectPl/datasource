@@ -30,10 +30,8 @@ class OrderingExtensionTest extends TestCase
     public function testStoringParameters()
     {
         $extension = new OrderingExtension();
-        $driver = $this->createMock(DriverInterface::class);
         /** @var MockObject|DataSourceInterface $datasource */
         $datasource = $this->getMockBuilder(DataSourceInterface::class)
-            ->setConstructorArgs([$driver])
             ->getMock();
         /** @var MockObject|FieldTypeInterface $field */
         $field = $this->createMock(FieldTypeInterface::class);
