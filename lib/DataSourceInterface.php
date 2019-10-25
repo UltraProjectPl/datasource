@@ -133,7 +133,7 @@ interface DataSourceInterface
      *
      * It should just proxy request to driver.
      *
-     * @return \Countable|\IteratorAggregate
+     * @return \Countable&\IteratorAggregate
      * @throws \FSi\Component\DataSource\Exception\DataSourceException
      */
     public function getResult();
